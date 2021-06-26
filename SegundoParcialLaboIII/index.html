@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Segundo Parcial Laboratorio</title>
+    <link type="text/css" rel="stylesheet" href="./styles.css">
+    <script type="text/javascript" src="./vehiculo.js"> </script>
+    <script type="text/javascript" src="./auto.js"> </script>
+    <script type="text/javascript" src="./camioneta.js"> </script>
+    <script type="text/javascript" src="./manejadora.js"> </script>
+</head>
+
+<body>
+    <input type="button" class="botonAbrir" id="btnAbrir" value="Alta" onclick="Parcial.abrirVentanaAlta();">                        
+    <h1>Filtros</h1>
+    <label for="tipoAuto">Mostrar listado de: </label>
+
+    <select class="combo" name="tipoVehiculos" id="mostrar">
+        <option value="Auto">Auto</option>
+        <option value="Camioneta">Camioneta</option>
+    </select>
+
+    <label for="promedioDePrecios"> Promedio de precio</label>
+    <input type="text" id="promedioDePrecios" name="promedio" class="promedio">
+    <input type="button" id="btnPrecio"  class="botonPrecio" value="Calcular Promedio">
+
+    <div class="contenedoraflex">
+        <div class="contenedor" id="ventanaAlta">
+            <input class="botonCerrar" type="button" id="btnCerrar" value="x" onclick="Parcial.cerrarVentanaAlta();">
+            <br>
+            <h2 id="txtAltaVehiculo">Alta Vehiculo</h2>
+            <label for="Id">ID</label>
+            <br>
+            <input type="text" id="Idehiculo" class="sinError" name="nombre" disabled=true>
+            <br>
+
+            <label for="marcaVehiculo">Marca</label>
+            <br>
+            <input type="text" id="marcaVehiculo" class="sinError" name="nombre">
+            <br>
+
+            <label for="modeloVehiculo">Modelo</label>
+            <br>
+            <input type="text" id="modeloVehiculo" class="sinError" name="nombre">
+            <br>
+
+            <label for="precioVehiculo">Precio</label>
+            <br>
+            <input type="number" id="precioVehiculo" class="sinError" name="nombre">
+            <br>
+
+            <!---------------------------------------------------------->
+
+            <label for="vehiculos">Tipo</label>
+
+            <select class="combo" name="tiposVehiculo" id="vehiculos">
+                <option value="Auto">Auto</option>
+                <option value="Camioneta">Camioneta</option>
+            </select>
+            <br>
+
+            <div id="contTipoCamioneta" hidden>
+
+                <label for="tipo">Tipo Camioneta</label>
+
+                <select class="combo" name="tipoCamioneta" id="tipoCamioneta">
+                    <option value="Es4X4">4x4</option>
+                    <option value="NoEs4x4">Otros</option>
+                </select>
+                <br>
+            </div>
+
+            <div id="contTipoAuto" hidden>
+
+                <label for="tipo">Puertas</label>
+
+                <input type="number" max="5" min="2" id="cantidadPuertas" class="sinError" name="puertas" placeholder="cantidad de puertas...">
+            </div>
+
+            <!----------------------------------------------------------------------------->
+
+            <input class="botonEliminar" type="button" id="btnEliminar" value="Cerrar" onclick="Parcial.cerrarVentanaAlta();" >
+            <input class="botonModificar" type="button" id="btnGuardar" value="Agregar" onclick="Parcial.agregar();">
+
+        </div>
+    </div>
+
+    <table id="tabla" border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Precio</th>
+                <th>Accion</th>
+            </tr>
+        </thead>
+        <tbody id="tCuerpo">
+
+        </tbody>
+
+    </table>
+
+</body>
+
+</html>
